@@ -1,4 +1,38 @@
+@use "@material/card";
+@include card.core-styles;
+
+@use "@material/list";
+@include list.core-styles;
+
+@use "@material/icon-button";
+@use "@material/top-app-bar/mdc-top-app-bar";
+
+@include icon-button.core-styles;
+
+
 html, body {
   height: 100%;
   width: 100%;
 }
+
+
+#optionsList {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.my-card {
+  height: 350px;
+  width: 350px;
+}
+
+.my-card-content {
+  padding: 16px;
+}
+
+.my-card__media {
+  background-image: url("https://ibb.co/B4cJn8d");
+}
+

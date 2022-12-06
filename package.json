@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@material/card": "^14.0.0",
+    "@material/list": "^14.0.0"
+  }
+}

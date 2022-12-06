@@ -6,18 +6,41 @@
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="manifest" href="manifest.json" />
+  <script src="sw.js"></script>
+  <head>
 </head>
 
+  <head>
+
 <body>
-  Hello world
+
+<div><button id="loveCalculatorBtn" onclick="loveButtonClick()">Love Calculator</button></div>
+<div><button id="dogImgGenerator" onclick="dogImgButton()">Random Dog Pictures Generator</button></div>
+<div><button id="googleChart" onclick="googleChartButton()">Google Chart</button> </div>
+<div><button id="selfie" onclick="selfieButton()">Selfie</button></div>
+<div><button id="back" onclick="backButton()">back</button></div>
+<div><button id="generateNames" onclick="generateNamesOnClick()">Generate</button></div>
+<p id="loveAPIResult"></p>
+<img id="dogImg"></img>
+
+
+  
+  <div id="selfieClass" class="contentarea">
+  <div class="camera">
+    <video id="video">Video stream not available.</video>
+    <button id="startbutton">Take photo</button>
+  </div>
+  <canvas id="canvas"> </canvas>
+  <div class="output">
+    <img id="photo" alt="The screen capture will appear in this box." />
+  </div>
+    <script src="script2.js"></script>
+</div>
+
+  
   <script src="script.js"></script>
 
- <!--
-  This script places a badge on your repl's full-browser view back to your repl's cover
-  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
-  teal, blue, blurple, magenta, pink!
-  -->
-  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> 
 </body>
 
 </html>
