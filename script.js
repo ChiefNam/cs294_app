@@ -10,11 +10,24 @@ let generateNames = document.getElementById("generateNames")
 let dogImg = document.getElementById("dogImg")
 let selfieClass = document.getElementById("selfieClass")
 
-
-
 selfieClass.style.display = "none"
 generateNames.style.display = "none"
 backBtn.style.display = "none"
+
+// Create indexedDB and database manipulation
+let db;
+const request = indexedDB.open("KhangDB");
+request.onerror = (event) => {
+  console.error("Why didn't you allow my web app to use IndexedDB?!");
+  console.error(`Database error: ${event.target.errorCode}`);
+};
+request.onsuccess = (event) => {
+  db = event.target.result;
+};
+
+
+
+
 
 
 // Code for Love Calculator
@@ -49,6 +62,7 @@ fetch('https://love-calculator.p.rapidapi.com/getPercentage?sname=' + name + '&f
 
  }
 
+// Code for generating random dog pics
 function generateNamesOnClick(){
   
   fetch("https://dog.ceo/api/breeds/image/random")
@@ -61,6 +75,8 @@ function generateNamesOnClick(){
         })
       .catch(err => alert(err))
 }
+
+
 
 
 function dogImgButton(){
@@ -113,6 +129,9 @@ if ('serviceWorker' in navigator) {
    navigator.serviceWorker.register('../sw.js').then( () => {
     console.log('Service Worker Registered')
    })
+    .catch(err=>{
+      console.log('error in registration');
+    })
  })
 }
 
