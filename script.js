@@ -10,6 +10,8 @@ let generateNames = document.getElementById("generateNames")
 let dogImg = document.getElementById("dogImg")
 let selfieClass = document.getElementById("selfieClass")
 
+
+generateNames.style.display="none"
 selfieClass.style.display = "none"
 generateNames.style.display = "none"
 backBtn.style.display = "none"
@@ -24,7 +26,6 @@ request.onerror = (event) => {
 request.onsuccess = (event) => {
   db = event.target.result;
 };
-
 
 
 
@@ -116,7 +117,7 @@ function backButton(){
   loveCalculatorResult.innerText = ""
   dogImg.src = ""
   selfieClass.style.display = "none"
-
+  generateNames.style.display="none"
 }
 
 function callPirateAPI(){

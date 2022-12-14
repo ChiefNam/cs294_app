@@ -43,7 +43,6 @@ self.addEventListener('install', (event) => {
     )
 });
 
-
 // Fetch events
 self.addEventListener('fetch', (event)=>{
 console.log('fetch event');
@@ -61,7 +60,6 @@ else{
         caches.match(event.request)
         .then((response)=>{
             if(response) return response;
-
             return fetch(event.request);
         })
     )
@@ -69,7 +67,6 @@ else{
 });
 
 self.addEventListener('activate', (event)=>{
-    
     const whiteList =['SERVICE_WORKER','my-page'];
     event.waitUntil(
         caches.keys().then(function(cacheNames) {
